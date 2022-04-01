@@ -1,0 +1,48 @@
+/***** Colors *****/
+
+$grey-light: #EEEEEE;
+$grey-dark: #424242;
+
+$light-blue-light: #4FC3F7;
+$light-blue-dark: #0288D1;
+$light-blue-gradient: linear-gradient(to right top, #4fc3f7, #3db4ee, #2ca5e5, #1997db, #0288d1);
+
+$indigo-light: #9FA8DA;
+$indigo-dark: #7986CB;
+$indigo-gradient: linear-gradient(to right top, #9fa8da, #969fd6, #8c97d3, #838ecf, #7986cb);
+
+$red-light: #EF9A9A;
+$red-dark: #E57373;
+$red-gradient: linear-gradient(to right top, #e57373, #e86b6b, #eb6462, #ed5c59, #ef5350);
+
+$green-light: #A5D6A7;
+$green-dark: #81C784;
+$green-gradient: linear-gradient(to right top, #a5d6a7, #9cd29e, #93cf96, #8acb8d, #81c784);
+
+$white: #FFF;
+
+/***** Font size *****/
+
+$font-size-xl: 18px;
+$font-size-lg: 16px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
+
+/***** Font weight *****/
+
+$font-weight-bold: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+/***** Most used colors *****/
+
+$text-color: $grey-dark;
+$link-color: $light-blue-dark;
+$grey-background-color: linear-gradient(to right top, #f7f8fa, #f6f7f8, #f5f5f6, #f4f4f5, #f3f3f3);
+
+/***** Borders and shadows *****/
+
+$border-radius: 8px;
+$box-shadow-strong: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+$box-shadow-medium: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+$box-shadow-light: rgba(0, 0, 0, .5) 0 1px 2px 0;

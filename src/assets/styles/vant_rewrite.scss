@@ -1,0 +1,36 @@
+@import "vars";
+
+/***** Cell *****/
+
+.van-cell__left-icon {
+  margin-right: 12px;
+}
+
+.van-field__label {
+  width: 8em;
+  color: $text-color;
+}
+
+/***** NavBar *****/
+
+.van-nav-bar .van-icon {
+  color: $link-color;
+}
+
+.van-nav-bar__text {
+  color: $link-color;
+}
+
+.van-nav-bar__title {
+  color: $text-color;
+}
+
+/***** Button *****/
+
+.van-button--round {
+  border-radius: $border-radius;
+}
+
+.van-button--primary {
+  background: $link-color;
+}
