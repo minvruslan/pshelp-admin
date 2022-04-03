@@ -34,3 +34,8 @@
 .van-button--primary {
   background: $link-color;
 }
+
+/*** Field ***/
+.van-field--error .van-field__control, .van-field--error .van-field__control::placeholder {
+  color: #ee0a24 !important;
+}

@@ -9,41 +9,43 @@
         Вход в профиль
       </div>
 
-      <van-form
-        class="login-card__form"
-        @click="errorMessage = ''"
-      >
+      <van-form class="login-card__form">
         <van-field
           v-model="username"
+          :class="errorMessage ? 'van-field--error' : ''"
           name="Логин"
           label="Логин"
           placeholder="username"
+          @click="errorMessage = ''"
         />
         <van-field
           v-model="password"
+          :class="errorMessage ? 'van-field--error' : ''"
           type="password"
           name="Password"
           label="Пароль"
           placeholder="******"
+          @click="errorMessage = ''"
         />
+
+        <template v-if="errorMessage">
+          <div class="login-card__error-text">
+            {{ errorMessage }}
+          </div>
+        </template>
+
+        <van-button
+          class="login-card__button"
+          type="primary"
+          block
+          round
+          native-type="submit"
+          :disabled="!username || !password"
+          @click="onEnterButton"
+        >
+          Войти
+        </van-button>
       </van-form>
-
-      <template v-if="errorMessage">
-        <div class="login-card__error-text">
-          {{ errorMessage }}
-        </div>
-      </template>
-
-      <van-button
-        class="login-card__button"
-        type="primary"
-        block
-        round
-        native-type="submit"
-        @click="onEnterButton"
-      >
-        Войти
-      </van-button>
     </div>
   </div>
 </template>
@@ -64,6 +66,10 @@ export default {
       'auth'
     ]),
     async onEnterButton () {
+      if (!(this.username && this.password)) {
+        return
+      }
+
       const result = await this.auth({
         username: this.username,
         password: this.password
@@ -73,7 +79,7 @@ export default {
         this.errorMessage = ''
         this.$router.push('/admin')
       } else {
-        this.errorMessage = 'Неверный логин или пароль'
+        this.errorMessage = 'Неверное сочетание логина или пароля'
       }
     }
   }
@@ -115,14 +121,16 @@ export default {
   }
 
   &__button {
-    width: calc(100% - 48px);
-    margin: 24px;
+    width: calc(100% - 32px);
+    margin: 24px 16px 24px 16px;
   }
 
   &__error-text {
-    margin-left: 24px;
+    margin-left: 16px;
+    margin-top: 24px;
     color: $red-dark;
     font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
   }
 }
 </style>

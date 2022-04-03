@@ -2,8 +2,6 @@
 
 const api = {
   async auth (username, password) {
-    console.log(username, password)
-
     if (username === 'test') {
       return {
         rc: 1
